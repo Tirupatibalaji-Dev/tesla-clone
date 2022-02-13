@@ -10,18 +10,18 @@ function Header(props) {
 
   return (
     <Container>
-      <a href="#">
+      <a href="#home">
         <img src="/images/logo.svg" alt="logo" />
       </a>
       <Menu>
         {cars && cars.map((car, index) => (
-        <a key={index} href="#">{car}</a>
+        <a key={index} href={`#${car}`}>{car}</a>
         ))}
       </Menu>
       <RightMenu>
         <RightMenuGroup>
-          <a href="#">Shop</a>
-          <a href="#">Account</a>
+          <a href="#shop">Shop</a>
+          <a href="#account">Account</a>
         </RightMenuGroup>
         <MenuBtn onClick={() => setOpen(true)}>Menu</MenuBtn>
       </RightMenu>
@@ -30,13 +30,13 @@ function Header(props) {
         <CustomClose onClick={() => setOpen(false)} />
         </CloseWrapper>
         {cars && cars.map((car, index) => (
-        <li key={index}><a href="#">{car}</a></li>
+        <li key={index}><a href={`#${car}`}>{car}</a></li>
         ))}
-        <li><a href="#">Existing Inventory</a></li>
-        <li><a href="#">Used Inventory</a></li>
-        <li><a href="#">Trade-in</a></li>
-        <li><a href="#">Cybertruck</a></li>
-        <li><a href="#">Roadster</a></li>
+        <li><a href="#existing_inventory">Existing Inventory</a></li>
+        <li><a href="#used_inventory">Used Inventory</a></li>
+        <li><a href="#trade-in">Trade-in</a></li>
+        <li><a href="#cybertruck">Cybertruck</a></li>
+        <li><a href="#roadster">Roadster</a></li>
       </NavBar>
     </Container>
   );
